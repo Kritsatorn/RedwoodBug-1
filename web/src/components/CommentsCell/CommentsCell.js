@@ -1,7 +1,7 @@
 import Comment from 'src/components/Comment'
 export const QUERY = gql`
-  query CommentsQuery {
-    comments {
+  query CommentsQuery($postId: Int!) {
+    comments(postId: $postId) {
       id
       name
       body
@@ -12,7 +12,9 @@ export const QUERY = gql`
 
 export const Loading = () => <div>Loading... HEHE</div>
 
-export const Empty = () => <div>Empty</div>
+export const Empty = () => {
+  return <div className="text-center text-gray-500">No comments yet</div>
+}
 
 export const Failure = ({ error }) => (
   <div style={{ color: 'red' }}>Error: {error.message}</div>

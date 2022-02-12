@@ -16,7 +16,7 @@ export const standard = () => ({
   ],
 })
 export const mockCommentsQuery = () => {
-  mockGraphQLQuery('GetUserDataQuery', (res, { ctx: { delay } }) => {
+  mockGraphQLQuery('CommentsQuery', (res, { ctx: { delay } }) => {
     delay(1200)
     return standard()
   })
